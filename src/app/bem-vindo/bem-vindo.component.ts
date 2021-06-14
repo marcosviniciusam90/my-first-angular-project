@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./bem-vindo.component.css']
 })
 export class BemVindoComponent {
+  
 
 }

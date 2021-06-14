@@ -6,10 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  name = 'Marcos';
+  nome = 'Marcos';
   idade = 31;
 
   getIdade() {
     return this.idade;
+  }
+
+  adicionar() {
+    console.log(`Adicionando ${this.nome}`);
+    const numero = Math.round(Math.random() * 100);
+    this.nome = 'Marcos ' + numero;
+  }
+
+  alterarNome(event: any) {
+    //console.log(event);
+    this.nome = event.target.value;
   }
 }

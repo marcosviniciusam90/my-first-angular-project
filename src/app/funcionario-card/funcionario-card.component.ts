@@ -23,4 +23,12 @@ export class FuncionarioCardComponent {
       backgroundColor: this.funcionario.id % 2 === 0 ? 'lightblue' : 'lightgreen'
     }
   }
+
+  //getClassesCss() {
+    //return ['badge', 'rounded-pill', 'bg-primary'];    
+  //}
+
+  isAdmin() {
+    return this.funcionario.nome.startsWith('M');
+  }
 }

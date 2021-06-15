@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="alert alert-success" role="alert" *ngIf="adicionado">
+    <div class="alert alert-success" role="alert" [hidden]="!adicionado">
         Funcionário adicionado: <strong>{{nome}}</strong>
     </div>
 

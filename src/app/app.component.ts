@@ -7,18 +7,9 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent  {
-  ultimoId = 1;
-  nome = 'Marcos';
-  adicionado = false;
   funcionarios: {id: number, nome: string}[] = [];
 
-  adicionar() {
-    console.log(`Adicionando ${this.nome}`);
-    this.adicionado = true;
-
-    this.funcionarios.push({
-      id: this.ultimoId++,
-      nome: this.nome
-    });
+  aoAdicionar(funcionario: any) {
+    this.funcionarios.push(funcionario);
   }
 }

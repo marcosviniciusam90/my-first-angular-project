@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'app-funcionario-card',
   templateUrl: './funcionario-card.component.html',
-  //styleUrls: ['./funcionario-card.component.css', '...', '...']
+  // styleUrls: ['./funcionario-card.component.css', '...', '...']
   styles: [`
     .card-body {
       text-transform: uppercase;
@@ -14,21 +14,21 @@ import { Component, Input } from '@angular/core';
 export class FuncionarioCardComponent {
 
   @Input() funcionario: any;
-  //@Input('obj')  -> dessa forma, no componente externo usariamos o alias 'obj'. Exemplo:
+  // @Input('obj')  -> dessa forma, no componente externo usariamos o alias 'obj'. Exemplo:
   // <app-funcionario-card [obj]="f"></app-funcionario-card>
 
-  getEstilosCartao() {
+  getEstilosCartao(): any {
     return {
       'border-width.px': this.funcionario.id,
       backgroundColor: this.funcionario.id % 2 === 0 ? 'lightblue' : 'lightgreen'
-    }
+    };
   }
 
-  //getClassesCss() {
-    //return ['badge', 'rounded-pill', 'bg-primary'];    
-  //}
+  // getClassesCss() {
+    // return ['badge', 'rounded-pill', 'bg-primary'];
+  // }
 
-  isAdmin() {
+  isAdmin(): any {
     return this.funcionario.nome.startsWith('M');
   }
 }

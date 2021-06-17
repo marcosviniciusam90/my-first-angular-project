@@ -1,4 +1,4 @@
-import { Directive, HostBinding, HostListener } from '@angular/core';
+import { Directive, HostBinding, HostListener, Input } from '@angular/core';
 
 @Directive({
   selector: '[appCampoColorido]'
@@ -7,10 +7,12 @@ import { Directive, HostBinding, HostListener } from '@angular/core';
 })
 export class CampoColoridoDirective {
 
+  @Input('appCampoColorido') cor = 'gray';
+
   @HostBinding('style.backgroundColor') corDeFundo = '';
 
   @HostListener('focus') onFocus(): void {
-    this.corDeFundo = 'yellow';
+    this.corDeFundo = this.cor;
   }
 
   @HostListener('blur') onBlur(): void {

@@ -1,6 +1,13 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
+// poderia criar a classe num arquivo TS separado
+class Cliente {
+    nome = '';
+    email = '';
+    profissao = '';
+}
+
 @Component({
   selector: 'app-formulario',
   templateUrl: './formulario.component.html',
@@ -8,12 +15,17 @@ import { NgForm } from '@angular/forms';
 })
 export class FormularioComponent {
 
+    cliente = new Cliente();
+
     profissoes = ['Programador', 'Empresário', 'Outra'];
-    profissaoPadrao = 'Outra';
 
     salvar(form: NgForm): any {
-        console.log(this.profissaoPadrao);
-        console.log(form.value.profissao);
+        // this.cliente.nome = form.value.fullName;
+        // this.cliente.email = form.value.emailAddress;
+        // this.cliente.profissao = form.value.profession;
+
+        console.log(form.value);
+        console.log(this.cliente);
     }
 
 }

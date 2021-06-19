@@ -1,6 +1,6 @@
 <div class="container">
     <p>{{ nome | uppercase }}</p>
-    <p>{{ dataAniversario | date }}</p>
-    <p>{{ preco | number }}</p>
-    <p>{{ troco | currency }}</p>
+    <p>{{ dataAniversario | date:'dd/MM/Y' }}</p>
+    <p>{{ preco | number: '1.2-2' }}</p>
+    <p>{{ troco | currency:'BRL':true:'1.2-2' }}</p>
   </div>

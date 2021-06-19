@@ -4,9 +4,12 @@
 
 <div class="form-group">
     <label>Nome</label>
-    <input [appCampoColorido]="'red'" type="text" class="form-control" [(ngModel)]="nome" (focus)="adicionado = false">
+    <input [appCampoColorido]="'red'" type="text" class="form-control"
+    #campo='campoColorido' [(ngModel)]="nome" (focus)="adicionado = false">
 
     <!-- <input type="text" class="form-control"> -->
 </div>
 
-<button type="button" class="btn btn-primary mt" (click)="adicionar()" [disabled]="nome.length == 0">Adicionar</button>
+<button type="button" class="btn btn-primary mt mr" (click)="adicionar()" [disabled]="nome.length == 0">Adicionar</button>
+<button class="btn btn-info mt mr" (click)="campo.colorir()">Colorir</button>
+<button class="btn btn-info mt mr" (click)="campo.descolorir()">Descolorir</button>

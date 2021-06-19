@@ -6,6 +6,8 @@
         Preencha todos os campos corretamente
     </div>
 
+    {{cliente | json}}
+
     <!-- Para desabilitar autocomplete ->    <form autocomplete="off" ...> -->
     <form #usuarioForm="ngForm" (ngSubmit)="salvar(usuarioForm)">
       <div class="form-group">

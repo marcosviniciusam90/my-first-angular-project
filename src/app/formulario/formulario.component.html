@@ -1,31 +1,40 @@
 <div class="container">
 
-    {{cliente | json}}<br>
-    {{'Formulário valido? ' + usuarioForm.valid}}
+    <div class="alert alert-danger" *ngIf="usuarioForm.invalid">
+        Preencha todos os campos corretamente
+    </div>
 
-
+    <!-- Para desabilitar autocomplete ->    <form autocomplete="off" ...> -->
     <form #usuarioForm="ngForm" (ngSubmit)="salvar(usuarioForm)">
       <div class="form-group">
         <label class="form-control-label">Nome</label>
         <input type="text" class="form-control" name="fullName"
-            [(ngModel)]="cliente.nome" required minlength="10">
+            [(ngModel)]="cliente.nome" required minlength="10" #campoNome="ngModel">
+
+        <!-- <div *ngIf="campoNome.invalid">Informe um nome válido (mensagem genérica)</div> -->
+        <div class="text-danger" *ngIf="campoNome.hasError('required')">Informe um nome</div>
+        <div class="text-danger" *ngIf="campoNome.hasError('minlength')">O nome deve ser completo</div>
       </div>
 
-      <div class="form-group">
+      <div class="form-group mt">
         <label class="form-control-label">E-mail</label>
         <input type="text" class="form-control" name="emailAddress"
-            [(ngModel)]="cliente.email" required email>
+            [(ngModel)]="cliente.email" email #campoEmail="ngModel">
+
+        <div class="text-danger" *ngIf="campoEmail.invalid">Informe um email válido</div>
       </div>
 
-      <div class="form-group">
+      <div class="form-group mt">
         <label class="form-control-label">Profissão</label>
-    <select class="form-control" name="profession"
-        [(ngModel)]="cliente.profissao" required>
+        <select class="form-control" name="profession"
+        [(ngModel)]="cliente.profissao" required #campoProfissao="ngModel">
           <option value="">Selecione</option>
           <option *ngFor="let profissao of profissoes" [value]="profissao">
               {{profissao}}
           </option>
         </select>
+
+        <div class="text-danger" *ngIf="campoProfissao.invalid">Selecione uma profissão</div>
       </div>
 
       <button type="submit" class="btn btn-primary mt"

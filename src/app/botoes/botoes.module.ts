@@ -8,6 +8,9 @@ import { BotaoGrandeComponent } from './botao-grande/botao-grande.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    BotaoGrandeComponent
   ]
 })
 export class BotoesModule { }

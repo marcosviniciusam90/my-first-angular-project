@@ -11,6 +11,7 @@ import { FuncionarioFormComponent } from './funcionario-form/funcionario-form.co
 import { CampoColoridoDirective } from './campo-colorido.directive';
 import { TestingPipesComponent } from './testing-pipes/testing-pipes.component';
 import { FormularioComponent } from './formulario/formulario.component';
+import { BotoesModule } from './botoes/botoes.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FormularioComponent } from './formulario/formulario.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BotoesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

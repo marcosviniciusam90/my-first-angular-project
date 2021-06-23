@@ -13,6 +13,8 @@ import { TestingPipesComponent } from './testing-pipes/testing-pipes.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { NavegacaoModule } from './navegacao/navegacao.module';
 
+import { FuncionarioService } from './funcionario.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +32,9 @@ import { NavegacaoModule } from './navegacao/navegacao.module';
     FormsModule,
     NavegacaoModule
   ],
-  providers: [],
+  providers: [
+      FuncionarioService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

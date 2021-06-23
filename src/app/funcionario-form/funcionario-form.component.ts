@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { FuncionarioService } from '../funcionario.service';
 
 @Component({
@@ -11,11 +11,7 @@ export class FuncionarioFormComponent {
     nome = '';
     adicionado = false;
 
-    funcionarioService: FuncionarioService;
-
-    constructor() {
-        this.funcionarioService = new FuncionarioService();
-    }
+    constructor(private funcionarioService: FuncionarioService) { }
 
     adicionar(): void {
         this.funcionarioService.adicionar(this.nome);

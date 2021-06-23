@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FuncionarioService } from './funcionario.service';
 
 @Component({
   selector: 'app-root',
@@ -6,10 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent  {
-  funcionarios: {id: number, nome: string}[] = [];
+export class AppComponent implements OnInit {
 
-  aoAdicionar(funcionario: any) {
-    this.funcionarios.push(funcionario);
-  }
+    funcionarios = [];
+    funcionarioService: FuncionarioService;
+
+    constructor() {
+      this.funcionarioService = new FuncionarioService();
+    }
+
+    ngOnInit(): void {
+        this.funcionarios = this.funcionarioService.consultar();
+    }
+
 }

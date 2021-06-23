@@ -21,3 +21,4 @@ https://www.notion.so/Angular-7048ffec4510468c96cf32c45b3b94f5
 - Vinculando propriedades do hospedeiro com @HostBinding
 - Pipes
 - Formulários (Template-driven Forms) com validação de dados
+- Injeção de dependências

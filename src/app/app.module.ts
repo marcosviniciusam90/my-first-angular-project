@@ -15,6 +15,7 @@ import { NavegacaoModule } from './navegacao/navegacao.module';
 
 import { FuncionarioService } from './funcionario.service';
 import { FuncionarioAbreviadoService } from './funcionario-abreviado.service';
+import { LogService } from './log.service';
 
 const criarFuncionarioService = () => {
     return new FuncionarioAbreviadoService(2);
@@ -38,7 +39,10 @@ const criarFuncionarioService = () => {
     NavegacaoModule
   ],
   providers: [
-      { provide: FuncionarioService, useFactory: criarFuncionarioService}
+      { provide: FuncionarioService, useFactory: criarFuncionarioService},
+
+      LogService,
+      { provide: 'logPrefixo', useValue: 'Console log'}
   ],
   bootstrap: [AppComponent]
 })

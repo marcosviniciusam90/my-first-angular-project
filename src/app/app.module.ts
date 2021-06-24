@@ -14,12 +14,7 @@ import { FormularioComponent } from './formulario/formulario.component';
 import { NavegacaoModule } from './navegacao/navegacao.module';
 
 import { FuncionarioService } from './funcionario.service';
-import { FuncionarioAbreviadoService } from './funcionario-abreviado.service';
 import { LogService } from './log.service';
-
-const criarFuncionarioService = () => {
-    return new FuncionarioAbreviadoService(2);
-};
 
 @NgModule({
   declarations: [
@@ -39,7 +34,7 @@ const criarFuncionarioService = () => {
     NavegacaoModule
   ],
   providers: [
-      { provide: FuncionarioService, useFactory: criarFuncionarioService},
+      FuncionarioService,
 
       LogService,
       { provide: 'logPrefixo', useValue: 'Console log'}

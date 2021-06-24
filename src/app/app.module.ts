@@ -12,6 +12,7 @@ import { NavegacaoModule } from './navegacao/navegacao.module';
 
 import { LogService } from './log.service';
 import { FuncionarioModule } from './funcionario/funcionario.module';
+import { RequisicoesComponent } from './requisicoes/requisicoes.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FuncionarioModule } from './funcionario/funcionario.module';
     HelloComponent,
     BemVindoComponent,
     TestingPipesComponent,
-    FormularioComponent
+    FormularioComponent,
+    RequisicoesComponent
   ],
   imports: [
     BrowserModule,

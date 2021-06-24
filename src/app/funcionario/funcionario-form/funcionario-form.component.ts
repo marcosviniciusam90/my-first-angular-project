@@ -4,7 +4,8 @@ import { FuncionarioService } from '../funcionario.service';
 @Component({
   selector: 'app-funcionario-form',
   templateUrl: './funcionario-form.component.html',
-  styleUrls: ['./funcionario-form.component.css']
+  styleUrls: ['./funcionario-form.component.css'],
+  providers: [FuncionarioService]
 })
 export class FuncionarioFormComponent {
 

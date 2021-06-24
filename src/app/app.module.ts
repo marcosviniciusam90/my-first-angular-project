@@ -14,6 +14,7 @@ import { FormularioComponent } from './formulario/formulario.component';
 import { NavegacaoModule } from './navegacao/navegacao.module';
 
 import { FuncionarioService } from './funcionario.service';
+import { FuncionarioAbreviadoService } from './funcionario-abreviado.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { FuncionarioService } from './funcionario.service';
     NavegacaoModule
   ],
   providers: [
-      FuncionarioService
+      { provide: FuncionarioService, useClass: FuncionarioAbreviadoService}
   ],
   bootstrap: [AppComponent]
 })

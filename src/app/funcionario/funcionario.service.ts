@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { LogService } from './log.service';
+import { LogService } from '../log.service';
 
 @Injectable()
 export class FuncionarioService {
@@ -7,7 +7,9 @@ export class FuncionarioService {
     ultimoId = 1;
     funcionarios = [{ id: 1, nome: 'João' }];
 
-    constructor(private logService: LogService) {}
+    constructor(
+        private logService: LogService
+    ) {}
 
     adicionar(nome: string): void {
 

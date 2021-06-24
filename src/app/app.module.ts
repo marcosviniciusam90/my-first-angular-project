@@ -6,24 +6,18 @@ import { AppComponent } from './app.component';
 import { HelloComponent } from './hello/hello.component';
 import { BemVindoComponent } from './bem-vindo/bem-vindo.component';
 import { FormsModule } from '@angular/forms';
-import { FuncionarioCardComponent } from './funcionario-card/funcionario-card.component';
-import { FuncionarioFormComponent } from './funcionario-form/funcionario-form.component';
-import { CampoColoridoDirective } from './campo-colorido.directive';
 import { TestingPipesComponent } from './testing-pipes/testing-pipes.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { NavegacaoModule } from './navegacao/navegacao.module';
 
-import { FuncionarioService } from './funcionario.service';
 import { LogService } from './log.service';
+import { FuncionarioModule } from './funcionario/funcionario.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HelloComponent,
     BemVindoComponent,
-    FuncionarioCardComponent,
-    FuncionarioFormComponent,
-    CampoColoridoDirective,
     TestingPipesComponent,
     FormularioComponent
   ],
@@ -31,11 +25,10 @@ import { LogService } from './log.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NavegacaoModule
+    NavegacaoModule,
+    FuncionarioModule
   ],
   providers: [
-      FuncionarioService,
-
       LogService,
       { provide: 'logPrefixo', useValue: 'Console log'}
   ],

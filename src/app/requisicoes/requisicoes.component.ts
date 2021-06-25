@@ -41,8 +41,11 @@ export class RequisicoesComponent implements OnInit {
             });
       }
 
-      atualizar(cidade: any): void {
-        alert(JSON.stringify(cidade));
+      atualizar(cidade: Cidade): void {
+        this.cidadeService.atualizar(cidade)
+            .then(() => {
+                alert('Cidade alterada com sucesso');
+            });
       }
 
 }

@@ -28,7 +28,7 @@ export class RequisicoesComponent implements OnInit {
         this.cidadeService.adicionar({ nome: nome })
             .then(response => {
                 const cidade: Cidade = response;
-                // alert(`Cidade ${cidade.nome} adicionada com código ${cidade.id}`);
+                alert(`Cidade ${cidade.nome} adicionada com código ${cidade.id}`);
                 this.consultar();
             });
       }

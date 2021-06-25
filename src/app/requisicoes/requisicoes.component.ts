@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Cidade } from '../cidade.model';
 import { CidadeService } from '../cidade.service';
-
-class Cidade {
-    id = 0;
-    nome = '';
-}
 
 @Component({
   selector: 'app-requisicoes',
@@ -17,15 +13,24 @@ export class RequisicoesComponent implements OnInit {
 
     constructor(private cidadeService: CidadeService) {}
 
-    ngOnInit(): void {
+      ngOnInit(): void {
+        this.consultar();
+      }
+
+      consultar(): void {
         this.cidadeService.consultar()
-            .then(cidades => {
-                this.cidades = cidades;
-            });
-    }
+        .then(cidades => {
+            this.cidades = cidades;
+        });
+      }
 
       adicionar(nome: string): void {
-        alert(nome);
+        this.cidadeService.adicionar({ nome: nome })
+            .then(response => {
+                const cidade: Cidade = response;
+                //alert(`Cidade ${cidade.nome} adicionada com código ${cidade.id}`);
+                this.consultar();
+            });
       }
 
       excluir(id: number): void {

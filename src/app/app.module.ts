@@ -9,10 +9,12 @@ import { FormsModule } from '@angular/forms';
 import { TestingPipesComponent } from './testing-pipes/testing-pipes.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { NavegacaoModule } from './navegacao/navegacao.module';
+import { HttpClientModule } from '@angular/common/http';
 
 import { LogService } from './log.service';
 import { FuncionarioModule } from './funcionario/funcionario.module';
 import { RequisicoesComponent } from './requisicoes/requisicoes.component';
+import { CidadeService } from './cidade.service';
 
 @NgModule({
   declarations: [
@@ -28,11 +30,13 @@ import { RequisicoesComponent } from './requisicoes/requisicoes.component';
     AppRoutingModule,
     FormsModule,
     NavegacaoModule,
-    FuncionarioModule
+    FuncionarioModule,
+    HttpClientModule
   ],
   providers: [
       LogService,
-      { provide: 'logPrefixo', useValue: 'Console log'}
+      { provide: 'logPrefixo', useValue: 'Console log'},
+      CidadeService
   ],
   bootstrap: [AppComponent]
 })

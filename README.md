@@ -22,4 +22,17 @@ https://www.notion.so/Angular-7048ffec4510468c96cf32c45b3b94f5
 - Pipes
 - Formulários (Template-driven Forms) com validação de dados
 - Injeção de dependências
-- Testando requisições -> https://github.com/typicode/json-server
+- Requisições REST
+
+## json-server
+O json-server nos permite ter um servidor fictício para fazer requisições REST.<br>
+Mais informações em https://github.com/typicode/json-server
+
+### Como funciona?
+- Cria um arquivo JSON colocando os dados fictícios da API (nesse projeto -> **data/db.json**)
+- Para subir o servidor, execute o comando abaixo:
+```
+json-server --watch [arquivo-json]
+json-server --watch data/db.json
+```
+Obs: o servidor será executado por padrão na porta **3000**.

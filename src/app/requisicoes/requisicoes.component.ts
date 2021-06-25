@@ -38,6 +38,10 @@ export class RequisicoesComponent implements OnInit {
             .then(() => {
                 alert('Cidade excluída com sucesso');
                 this.consultar();
+            })
+            .catch(erro => {
+                console.log(erro);
+                alert(`Erro ao excluir cidade com id ${id}. STATUS: ${erro.statusText}`);
             });
       }
 
@@ -45,6 +49,10 @@ export class RequisicoesComponent implements OnInit {
         this.cidadeService.atualizar(cidade)
             .then(() => {
                 alert('Cidade alterada com sucesso');
+            })
+            .catch(erro => {
+                console.log(erro);
+                alert(`Erro ao alterar cidade com id ${cidade.id}. STATUS: ${erro.statusText}`);
             });
       }
 
